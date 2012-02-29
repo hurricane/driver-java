@@ -27,10 +27,11 @@
       <compilerarg value="-Xlint"/>
     </javac>
   </target>
-  <target name="test">
+  <target name="test" depends="compile-tests">
     <junit printsummary="yes">
       <classpath>
         <pathelement path="classes"/>
+        <pathelement location="junit.jar" />
       </classpath>
       <formatter type="plain"/>
       <test name="org.hurricane.driver.test.EncodeTest"/>
